@@ -29,7 +29,7 @@ Each image had some emotion ratings:<br/>
 **Internal norms:** whether the contents of the picture were morally and ethically acceptable (only applicable to animal mistreatment and human rights violation images)<br/>
 **External norms:** whether the contents of the picture were legally acceptable (only applicable to animal mistreatment and human rights violation images)
 
-The column of interest is the valence scores associated with each image. However, the distribution of the valence scores is highly imbalanced.
+The column of interest is the valence scores associated with each image. However, the distribution of the valence scores is highly imbalanced. <br/>
 ![](Images/Class%20In%20Intervals.jpg)
 
 This is due to the image set being imbalanced in the types of images it contains: <br/>
@@ -53,7 +53,7 @@ Sometimes I ran into a ParserError when reading in csv files however, and it did
 ## Training
 A lot of hyperparameter optimization was done on the MobileNet model, as it is the smallest model to work with. The best parameters from the model were applied to other pre-trained models.
 At some point though, even with tweaking and testing, the models got stuck and could not improve any further. <br/>
-There were the best results that I could get for each model:
+There were the best results that I could get for each model: <br/>
 ![](Images/Best%20Results.png)
 
 With the R2 score being negative, and the mean squared error being in the hundreds, I realized that even with more tweaking, I would probably not be able to improve the model's performance any further.
@@ -76,7 +76,7 @@ As it can be seen, the best optimized model is predicting the images to have sco
 
 ## To-do list:
 1. Increase the image set size. <br/>
-Webscraped images will not have the emotion scores associated with each image unfortunately, so I'm currently working on image augmentation, as well as looking to add on other image sets that have valence scores associated with each image.
+Webscraped images will not have the emotion scores associated with each image unfortunately, so I'm currently working on image augmentation, as well as looking to add on other image sets that have valence scores associated with each image. <br/>
 Some hurdles with image augmentation:
 - Each class contain more than 1 type of image, so I have to balance out each type of image within each class so that the distribution of valence scores balance out. 
 - Another issue is that os.listdir() or ls in terminal will only list files in alphanumerical order, and not the order the images are stored in the folder. <br/>
@@ -95,7 +95,8 @@ Email: fudo0024@hotmail.com
 
 For more examples on image sentiment analysis, feel free to check out some of the studies below. <br/>
 **Robust Image Sentiment Analysis Using Progressively Trained and Domain Transferred Deep Networks** <br/>
-http://www.ifp.illinois.edu/~jyang29/papers/AAAI15-sentiment.pdf <br/>
+http://www.ifp.illinois.edu/~jyang29/papers/AAAI15-sentiment.pdf
+
 **Emotion Detection and Sentiment Analysis of Images** <br/>
 https://www.cc.gatech.edu/~hays/7476/projects/Aditi_Vasavi.pdf
 
