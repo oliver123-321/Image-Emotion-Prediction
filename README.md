@@ -1,5 +1,6 @@
 # Image-Emotion-Prediction
 
+
 The goal of this project was to see if a model can learn something so human-subjective, like emotions, and how well it can learn it. <br/>
 Coming from a cognitive science background, there's this age old question of can robots truly have consciousness, and can they truly have "feelings"?  
 I wanted to see what it would be like to implement this by creating a model to predict emotions from pictures. 
@@ -20,19 +21,19 @@ There were four specific negative content: <br/>
 **Positive** images contain: Human and animal babies, and nature sceneries <br/>
 **Neutral** images contain: Inanimate objects
 
-Each image had some emotion ratings:
-Valence: how negative to how positive the image was. 0 = very negative to 100 = very positive, with 50 = neutral.
-i.e: “You are judging this image as …”, from negative to positive.
-Arousal: degree of arousal elicited by the picture.
-i.e: “Confronted with this image you are feeling: …”, on two scales: from Calm to Excited, and from Stimulated to Relaxed.
-Internal norms: whether the contents of the picture were morally and ethically acceptable (only applicable to animal mistreatment and human rights violation images)
-External norms: whether the contents of the picture were legally acceptable (only applicable to animal mistreatment and human rights violation images)
+Each image had some emotion ratings:<br/>
+**Valence:** how negative to how positive the image was. 0 = very negative to 100 = very positive, with 50 = neutral.<br/>
+**i.e:** “You are judging this image as …”, from negative to positive.<br/>
+**Arousal:** degree of arousal elicited by the picture.<br/>
+**i.e:** “Confronted with this image you are feeling: …”, on two scales: from Calm to Excited, and from Stimulated to Relaxed.<br/>
+**Internal norms:** whether the contents of the picture were morally and ethically acceptable (only applicable to animal mistreatment and human rights violation images)<br/>
+**External norms:** whether the contents of the picture were legally acceptable (only applicable to animal mistreatment and human rights violation images)
 
 The column of interest is the valence scores associated with each image. However, the distribution of the valence scores is highly imbalanced.
-[[https://github.com/oliver123-321/Image-Emotion-Prediction/images/Class In Intervals.jpg]]
+![class intervals] (https://github.com/oliver123-321/Image-Emotion-Prediction/tree/master/Images/Class In Intervals.jpg)
 
-This is due to the image set being imbalanced in the types of images it contains:
-[[https://github.com/oliver123-321/Image-Emotion-Prediction/images/Class Imbalance.jpg]]
+This is due to the image set being imbalanced in the types of images it contains: <br/>
+![class imbalance] (https://github.com/oliver123-321/Image-Emotion-Prediction/tree/master/Images/Class Imbalance.jpg)
 
 This becomes an issue as the model will predict most images as having more negative scores, particulary around 30-60. This is on top of having a very small image set to work from.
 
@@ -62,13 +63,13 @@ I realized that I needed to address the root of the problem, which is the image 
 Valence scale: ![valence scale] (Images/Valence Scale.jpg)
 
 What my best performing model predicts for a positive image:
-![positive img] (Images/Positive Image Demo.jpg)
+![positive img] (https://github.com/oliver123-321/Image-Emotion-Prediction/tree/master/Images/Positive Image Demo.jpg)
 
 Neutral image:
-![neutral img] (Images/Neutral Image Demo.jpg)
+![neutral img] (https://github.com/oliver123-321/Image-Emotion-Prediction/tree/master/Images/Neutral Image Demo.jpg)
 
 Negative image:
-![negative img] (Images/Negative Image Demo.jpg)
+![negative img] (https://github.com/oliver123-321/Image-Emotion-Prediction/tree/master/Images/Negative Image Demo.jpg)
 
 As it can be seen, the best optimized model is predicting the images to have scores around 39, which matches the imbalance in the image set, since a majority of images had scores between 30-40. 
 
