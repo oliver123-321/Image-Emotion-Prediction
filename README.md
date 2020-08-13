@@ -46,7 +46,7 @@ However, by having the model use the outputs of its predictions as inputs for a 
 To implement a 2-step problem though, the model has to be able to make good predictions in the first step to be able to move on to the second step, which is where I am currently stuck on so far.
  
 ## Setup
-Using CNNs from the Tensorflow applications package allowed me to see how different models fared on the regression task. 
+Using CNNs from Keras applications allowed me to see how different models fared on the regression task. I used five pre-trained models: InceptionV3, MobileNet, Resnet50, VGG19, and Xception. <br/>
 At first, all coding was done in a Jupyter Notebook, but the kernel always died when running the VGG19 model. Eventually, all coding was moved to Google Colab, as Colab also has GPU available for use, which rapidly increased the speed of training. <br/>
 Sometimes I ran into a ParserError when reading in csv files however, and it did go away after I restarted the notebooks after awhile, but it is something to look out for. Some have said that this error seems to occur when reading in too much data in a short period of time. 
 
