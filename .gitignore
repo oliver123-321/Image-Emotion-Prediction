@@ -1,0 +1,15 @@
+# Ignore the Data directory
+Data/
+
+# Ignore the Images directory
+Images/
+
+# Ignore the Models directory
+Models/
+
+# Ignore the Results directory
+Results/
+
+# Ignore the Summary directory
+Summary/
+
