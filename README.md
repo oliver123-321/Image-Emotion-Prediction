@@ -1,6 +1,5 @@
 # Image-Emotion-Prediction
 
-
 The goal of this project was to see if a model can learn something so human-subjective, like emotions, and how well it can learn it. <br/>
 Coming from a cognitive science background, there's this age old question of can robots truly have consciousness, and can they truly have "feelings"?  
 I wanted to see what it would be like to implement this by creating a model to predict emotions from pictures. 
@@ -18,6 +17,7 @@ There were four specific negative content: <br/>
 **H:** Human rights violation<br/>
 **Sn:** Snakes <br/>
 **Sp:** Spiders<br/>
+
 **Positive** images contain: Human and animal babies, and nature sceneries <br/>
 **Neutral** images contain: Inanimate objects
 
@@ -30,10 +30,10 @@ Each image had some emotion ratings:<br/>
 **External norms:** whether the contents of the picture were legally acceptable (only applicable to animal mistreatment and human rights violation images)
 
 The column of interest is the valence scores associated with each image. However, the distribution of the valence scores is highly imbalanced.
-![class intervals] (https://github.com/oliver123-321/Image-Emotion-Prediction/tree/master/Images/Class In Intervals.jpg)
+![](Images/Class%20In%20Intervals.jpg)
 
 This is due to the image set being imbalanced in the types of images it contains: <br/>
-![class imbalance] (https://github.com/oliver123-321/Image-Emotion-Prediction/tree/master/Images/Class Imbalance.jpg)
+![](Images/Class%20Imbalance.png)
 
 This becomes an issue as the model will predict most images as having more negative scores, particulary around 30-60. This is on top of having a very small image set to work from.
 
@@ -54,22 +54,23 @@ Sometimes I ran into a ParserError when reading in csv files however, and it did
 A lot of hyperparameter optimization was done on the MobileNet model, as it is the smallest model to work with. The best parameters from the model were applied to other pre-trained models.
 At some point though, even with tweaking and testing, the models got stuck and could not improve any further. <br/>
 There were the best results that I could get for each model:
-![best result] (Images/Best Results.jpg)
+![](Images/Best%20Results.png)
 
 With the R2 score being negative, and the mean squared error being in the hundreds, I realized that even with more tweaking, I would probably not be able to improve the model's performance any further.
 I realized that I needed to address the root of the problem, which is the image set that I was working with. At the time of making the project, I didn't have time to address the image set issues. This is something that I am currently working to address now.
 
 ## Examples
-Valence scale: ![valence scale] (Images/Valence Scale.jpg)
+Valence scale: <br/>
+![](Images/Valence%20Scale.png)
 
 What my best performing model predicts for a positive image:
-![positive img] (https://github.com/oliver123-321/Image-Emotion-Prediction/tree/master/Images/Positive Image Demo.jpg)
+![](Images/Positive%20Image%20Demo.png)
 
 Neutral image:
-![neutral img] (https://github.com/oliver123-321/Image-Emotion-Prediction/tree/master/Images/Neutral Image Demo.jpg)
+![](Images/Neutral%20Image%20Demo.png)
 
 Negative image:
-![negative img] (https://github.com/oliver123-321/Image-Emotion-Prediction/tree/master/Images/Negative Image Demo.jpg)
+![](Images/Negative%20Image%20Demo.png)
 
 As it can be seen, the best optimized model is predicting the images to have scores around 39, which matches the imbalance in the image set, since a majority of images had scores between 30-40. 
 
