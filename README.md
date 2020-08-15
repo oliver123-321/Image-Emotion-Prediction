@@ -35,7 +35,9 @@ The column of interest is the valence scores associated with each image. However
 This is due to the image set being imbalanced in the types of images it contains: <br/>
 ![](Images/Class%20Imbalance.png)
 
-This becomes an issue as the model will predict most images as having more negative scores, particulary around 30-60. This is on top of having a very small image set to work from.
+This becomes an issue as the model will predict most images as having more negative scores, particulary around 30-60. This is on top of having a very small image set, where the model has little examples to learn from. The class imbalance will also reflect a false accuracy when doing a classification problem, so it is important to compare the precision and recall in this case as well.
+
+What is important to note is that the valence score does not necessarily reflect the valence category an image belongs in. Looking at the negative category, some images have scores above 50. This may reflect false positives (positive in the negative sense) in the negative valence category. It could also reflect some subjectiveness in the interpretation the image. A type of image may be associated with negative emotions, but it may not be considered so negative by every single person. What the distribution of valence scores shows is that image sentiment analysis using objective classification methods may not necessarily reflect the subjective valence rating associated with each image. A hard threshold for what is considered negative, neutral, and positive may not capture variations in interpretations.
 
 Since the valence score is a value, a CNN with a single-node linear output is created. <br/>
 This project is intended to be a 2-step process however:
