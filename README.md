@@ -2,7 +2,8 @@
 
 The goal of this project was to see if a model can learn something so human-subjective, like emotions, and how well it can learn it. <br/>
 Coming from a cognitive science background, there's this age old question of can robots truly have consciousness, and can they truly have "feelings"?  
-I wanted to see what it would be like to implement this by creating a model to predict emotions from pictures. 
+I wanted to see what it would be like to implement this by creating a model to predict emotions from pictures. <br/> 
+Here is a short 3-minutes video on the project: https://www.loom.com/share/1917bb5ed8f14eec8eb16a9b7e7dbac4
 
 I used a dataset from an emotion study, called the Geneva affective picture database (GAPED). <br/>
 Link to study: https://link.springer.com/article/10.3758/s13428-011-0064-1 <br/>
