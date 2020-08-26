@@ -31,7 +31,7 @@ Each image had some emotion ratings:<br/>
 **External norms:** whether the contents of the picture were legally acceptable (only applicable to animal mistreatment and human rights violation images)
 
 The column of interest is the valence scores associated with each image. However, the distribution of the valence scores is highly imbalanced. <br/>
-![](Images/Class%20In%20Intervals.jpg)
+![](Images/Valence%20Rating%20by%20Valence%20Category.png)
 
 This is due to the image set being imbalanced in the types of images it contains: <br/>
 ![](Images/Class%20Imbalance.png)
