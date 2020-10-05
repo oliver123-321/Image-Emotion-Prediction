@@ -109,5 +109,12 @@ For tips on CNN regression: <br/>
 https://www.pyimagesearch.com/2019/01/28/keras-regression-and-cnns/
 
 ## References
-Dan-Glauser, E.S., Scherer, K.R. The Geneva affective picture database (GAPED): a new 730-picture database focusing on valence and normative significance. Behav Res 43, 468 (2011). <br/>
-https://doi.org/10.3758/s13428-011-0064-1
+Dan-Glauser, E.S., Scherer, K.R. The Geneva affective picture database (GAPED): a new 730-picture database focusing on valence and normative significance. Behav Res 43, 468 (2011). doi.org/10.3758/s13428-011-0064-1
+
+Marchewka A., Żurawski Ł., Jednoróg K., Grabowska A. (2014) The Nencki Affective Picture System (NAPS): introduction to a novel, standardized, wide-range, high-quality, realistic picture database. Behavior Research Methods, 46(2), 596–610. doi:10.3758/s13428-013-0379-1
+
+Riegel M., Żurawski Ł., Wierzba M., Moslehi A., Klocek Ł., Horvat M., Grabowska A., Michalowski J. Jednoróg K., Marchewka A. (2016) Characterization of the Nencki Affective Picture System by discrete emotional categories (NAPS BE). Behavior Research Methods, 48(2), 600-612. doi:10.3758/s13428-015-0620-1
+
+Wierzba M., Riegel M., Pucz A., Leśniewska Z., Dragan W. Ł., Gola M., Jednoróg K., Marchewka A. (2015) Erotic subset for the Nencki Affective Picture System (NAPS ERO): cross-sexual comparison study. Frontiers in Psychology, 6:1336. doi: 10.3389/fpsyg.2015.01336
+
+Michałowski J. M., Droździel D., Matuszewski J., Koziejowski W., Jednoróg K., Marchewka A. (2016) Set of Fear Inducing Pictures (SFIP): The development and validation in fearful and non-fearful individuals. Behavior Research Methods, doi:10.3758/s13428-016-0797-y
