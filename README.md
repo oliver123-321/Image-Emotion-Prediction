@@ -5,12 +5,17 @@ Coming from a cognitive science background, there's this age old question of can
 I wanted to see what it would be like to implement this by creating a model to predict emotions from pictures. <br/> 
 Here is a short 3-minutes video on the project: https://www.loom.com/share/1917bb5ed8f14eec8eb16a9b7e7dbac4
 
-I used a dataset from an emotion study, called the Geneva affective picture database (GAPED). <br/>
+I used two datasets, both from emotion studies.
+One is called the Geneva affective picture database (GAPED). <br/>
 Link to study: https://link.springer.com/article/10.3758/s13428-011-0064-1 <br/>
 Link to dataset: https://www.unige.ch/cisa/research/materials-and-online-research/research-material/
 
+The other is The Nencki Affective Picture System (NAPS).
+Link to study: https://link.springer.com/article/10.3758/s13428-013-0379-1 <br/>
+Link to dataset: https://lobi.nencki.gov.pl/research/8/
+
 ## General info
-The dataset comes with 730 images, and csv files that have emotional ratings for each type of image in the dataset.
+The GAPED dataset comes with 730 images, and csv files that have emotional ratings for each type of image in the dataset.
 The images were broken up into 6 types.
 
 There were four specific negative content: <br/>
@@ -38,7 +43,8 @@ This is due to the image set being imbalanced in the types of images it contains
 
 This becomes an issue as the model will predict most images as having more negative scores, particulary around 30-60. This is on top of having a very small image set, where the model has little examples to learn from. The class imbalance will also reflect a false accuracy when doing a classification problem, so it is important to compare the precision and recall in this case as well.
 
-What is important to note is that the valence score does not necessarily reflect the valence category an image belongs in. Looking at the negative category, some images have scores above 50. This may reflect false positives (positive in the negative sense) in the negative valence category. It could also reflect some subjectiveness in the interpretation the image. A type of image may be associated with negative emotions, but it may not be considered so negative by every single person. What the distribution of valence scores shows is that image sentiment analysis using objective classification methods may not necessarily reflect the subjective valence rating associated with each image. A hard threshold for what is considered negative, neutral, and positive may not capture variations in interpretations.
+What is important to note is that the calculated valence category based on valence score does not necessarily reflect the labeled valence category. Looking at the negative category, some images have scores above 50. This may lead to false positives (positive in the negative sense) in the labeled negative valence category. It could also reflect some subjectiveness in the interpretation the image. A type of image may be associated with negative emotions, but it may not be considered so negative by every single person. What the distribution of valence scores shows is that image sentiment analysis using objective classification methods may not necessarily reflect the subjective valence rating associated with each image. A hard threshold for what is considered negative, neutral, and positive may not capture variations in interpretations. <br/>
+However, by teaching the model that certain types of images can contain both positive and negative valence examples, the model can become more robust to accounting for variations in images that tend to fall under one particular valence category. The training for a classification problem should thus, be done based on calculated valence category, rather than the labeled valence category.
 
 Since the valence score is a value, a CNN with a single-node linear output is created. <br/>
 This project is intended to be a 2-step process however:
@@ -78,15 +84,11 @@ Negative image:
 As it can be seen, the best optimized model is predicting the images to have scores around 39, which matches the imbalance in the image set, since a majority of images had scores between 30-40. 
 
 ## To-do list:
-1. Increase the image set size. <br/>
-Webscraped images will not have the emotion scores associated with each image unfortunately, so I'm currently working on image augmentation, as well as looking to add on other image sets that have valence scores associated with each image. <br/>
-Some hurdles with image augmentation:
-- Each class contain more than 1 type of image, so I have to balance out each type of image within each class so that the distribution of valence scores balance out. 
-- Another issue is that os.listdir() or ls in terminal will only list files in alphanumerical order, and not the order the images are stored in the folder. <br/>
-Since each image have some scores associated with it, after doing image augmentation, I have to do some manual work renaming and moving images so that the names of images match up with the order that the scores are listed in. <br/>
+1. NAPS EDA: NAPS is another image set that also contain images with emotion measures. It also comes with a dataset that contains information about each image, such as the emotion measures, and physical properties about each image.
 The goal is ultimately address the class imbalance in the image set, as well as ensuring that each class has a large enough sample to work from.
-2. Hyperparameter optimization of the regression CNN model.
-3. Create a CNN classifier that can take 2 inputs: one being the image arrays, and the other being the output of the regression model. 
+2. Train the images based on the calculated valence category, not the labeled valence category.
+3. Hyperparameter optimization of the regression CNN model. 
+4. Create a CNN classifier that can take 2 inputs: one being the image arrays, and the other being the output of the regression model. 
 
 ## Status
 The project is still in status. 
